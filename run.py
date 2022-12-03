@@ -19,6 +19,22 @@ def print_board(board):
         row_num += 1
 
 
+def print_final_board(guessed_board, hidden_board):
+    # Create board when game over with both ships, hits and missed shots 
+    print()
+    print('   A   B   C   D   E   F   G   H')
+    print('  *** *** *** *** *** *** *** ***')
+    for row_num, row in enumerate(guessed_board):
+        row_str = []
+        for col_num, cell in enumerate(row):
+            if cell == ' ' and hidden_board[row_num][col_num] == 'X':
+                row_str.append('(X)')
+            else:
+                row_str.append(' '+cell+' ')
+
+        print("%d|%s|" % (row_num+1, "|".join(row_str)))
+
+
 def create_ships(board):
     # Function to create ships
     row_list = random.sample(range(0, 7), 5)
@@ -36,6 +52,7 @@ def count_hit_ships(board):
                 count += 1
     return count
 
+
 def get_player_guess():
     # Enter the row number between 1 to 8
     print()
@@ -43,7 +60,7 @@ def get_player_guess():
     while not row or row not in '12345678':
         print("Please enter a valid number ")
         row = input('Please enter a number between 1 and 8: \n')
-    # Enter the Ship column from A TO H
+    # Enter the column letter from A to H
     col = input('Please enter a letter between A and H: \n').upper()
     while not col or col not in 'ABCDEFGH':
         print("Please enter a valid letter ")
@@ -79,4 +96,7 @@ while turns > 0:
         turns -= 1
     if turns == 0:
         print()
-        print('GAME OVER!')    
+        print('GAME OVER!')
+        print()
+        print_final_board(Guess_Pattern, Hidden_Pattern)
+        break
