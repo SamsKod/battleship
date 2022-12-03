@@ -12,4 +12,5 @@ def print_board(board):
         print("%d| %s |" % (row_num, " | ".join(row)))
         row_num += 1
 
+
 print_board(Hidden_Pattern)
