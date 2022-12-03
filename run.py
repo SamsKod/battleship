@@ -73,14 +73,13 @@ def get_player_guess():
 
 
 create_ships(Hidden_Pattern)
-turns = 3
+turns = 10
 print(' Welcome to Battleship!')
 print()
 print(' You have ' + str(turns) + ' turns. Good Luck!')
 
 
 while turns > 0:
-    print_board(Hidden_Pattern)
     print_board(Guess_Pattern)
     row, col = get_player_guess()
     if Guess_Pattern[row][col] == 'O' or Guess_Pattern[row][col] == 'X':
@@ -96,7 +95,7 @@ while turns > 0:
         turns -= 1
     if turns == 0:
         print()
-        print('GAME OVER!')
+        print('    GAME OVER!')
         print()
         print_final_board(Guess_Pattern, Hidden_Pattern)
         break
