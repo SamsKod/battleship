@@ -27,6 +27,15 @@ def create_ships(board):
         board[row][col] = 'X'
 
 
+def count_hit_ships(board):
+    # Function that counts hits
+    count = 0
+    for row in board:
+        for col in row:
+            if col == 'X':
+                count += 1
+    return count
+
 def get_player_guess():
     # Enter the row number between 1 to 8
     print()
@@ -42,6 +51,8 @@ def get_player_guess():
 
     print()
     return int(row)-1, col_num[col]
+
+# Game start
 
 
 create_ships(Hidden_Pattern)
@@ -66,3 +77,6 @@ while turns > 0:
         print()
         Guess_Pattern[row][col] = 'O'
         turns -= 1
+    if turns == 0:
+        print()
+        print('GAME OVER!')    
