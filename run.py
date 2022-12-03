@@ -45,9 +45,24 @@ def get_player_guess():
 
 
 create_ships(Hidden_Pattern)
+turns = 3
 print(' Welcome to Battleship!')
 print()
+print(' You have ' + str(turns) + ' turns. Good Luck!')
 
-print_board(Hidden_Pattern)
-print_board(Guess_Pattern)
-row, col = get_player_guess()
+
+while turns > 0:
+    print_board(Hidden_Pattern)
+    print_board(Guess_Pattern)
+    row, col = get_player_guess()
+    if Guess_Pattern[row][col] == 'O' or Guess_Pattern[row][col] == 'X':
+        print(' You already guessed that.')
+    elif Hidden_Pattern[row][col] == 'X':
+        print(' Congratulations, you have hit the battleship!')
+        Guess_Pattern[row][col] = 'X'
+        turns -= 1
+    else:
+        print('Sorry, you missed!')
+        print()
+        Guess_Pattern[row][col] = 'O'
+        turns -= 1
