@@ -96,7 +96,9 @@ while turns > 0:
         turns -= 1
     if turns == 0:
         print()
-        print('    GAME OVER!')
+        print('      GAME OVER!')
         print()
+        print(' Here is your guesses and hits.')
+        print(' You see the hidden ships aswell (X)')
         print_final_board(Guess_Pattern, Hidden_Pattern)
         break
