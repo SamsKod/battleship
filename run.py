@@ -77,7 +77,7 @@ turns = 10
 print(' Welcome to Battleship!')
 print()
 print(' There are 5 ships to find.')
-print(' You have ' + str(turns) + ' turns. Good Luck!')
+print(' You start with ' + str(turns) + ' turns. Good Luck!')
 
 
 while turns > 0:
@@ -94,6 +94,10 @@ while turns > 0:
         print()
         Guess_Pattern[row][col] = 'O'
         turns -= 1
+    if count_hit_ships(Guess_Pattern) == 5:
+        print("Congratulations, you have sunk all the battleships!")
+        break
+    print(' You have ' + str(turns) + ' turns remaining.')
     if turns == 0:
         print()
         print('      GAME OVER!')
