@@ -76,6 +76,7 @@ create_ships(Hidden_Pattern)
 turns = 10
 print(' Welcome to Battleship!')
 print()
+print(' There are 5 ships to find.')
 print(' You have ' + str(turns) + ' turns. Good Luck!')
 
 

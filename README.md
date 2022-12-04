@@ -4,7 +4,7 @@ This is a Battleship game made in Python code.
 It is deployed on Heroku platform together with nodejs package made på Code Institute. 
 Go to https://sams-battleship-game.herokuapp.com/ to try it out. It is a web site with a mockup terminal. The game starts automatically.  When game is finished it can be restarted with the button "run program".
 
-![Screenshot](assets/images/.png)
+![Screenshot](assets/images/screenshot.png)
 
 # Features
 - 
