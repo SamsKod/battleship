@@ -2,8 +2,8 @@ import random
 
 
 # Create empty lists for ships and hits
-Hidden_Pattern = [[' ']*8 for x in range(8)]
-Guess_Pattern = [[' ']*8 for x in range(8)]
+Hidden_Pattern = [[' '] * 8 for x in range(8)]
+Guess_Pattern = [[' '] * 8 for x in range(8)]
 
 col_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
@@ -11,28 +11,28 @@ col_num = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
 def print_board(board):
     # Create board for the game
     print()
-    print('   A   B   C   D   E   F   G   H')
-    print('  *** *** *** *** *** *** *** ***')
+    print('     A   B   C   D   E   F   G   H')
+    print('    *** *** *** *** *** *** *** ***')
     row_num = 1
     for row in board:
-        print("%d| %s |" % (row_num, " | ".join(row)))
+        print(" % d| % s |" % (row_num, " | ".join(row)))
         row_num += 1
 
 
 def print_final_board(guessed_board, hidden_board):
     # Create board when game over with both ships, hits and missed shots 
     print()
-    print('   A   B   C   D   E   F   G   H')
-    print('  *** *** *** *** *** *** *** ***')
+    print('    A   B   C   D   E   F   G   H')
+    print('   *** *** *** *** *** *** *** ***')
     for row_num, row in enumerate(guessed_board):
         row_str = []
         for col_num, cell in enumerate(row):
             if cell == ' ' and hidden_board[row_num][col_num] == 'X':
                 row_str.append('(X)')
             else:
-                row_str.append(' '+cell+' ')
+                row_str.append(' ' + cell + ' ')
 
-        print("%d|%s|" % (row_num+1, "|".join(row_str)))
+        print("% d|% s|" % (row_num + 1, "|".join(row_str)))
 
 
 def create_ships(board):
@@ -67,13 +67,13 @@ def get_player_guess():
         col = input('Please enter a letter between A and H: \n').upper()
 
     print()
-    return int(row)-1, col_num[col]
+    return int(row) - 1, col_num[col]
 
 # Game start
 
 
 create_ships(Hidden_Pattern)
-turns = 10
+turns = 1
 print(' Welcome to Battleship!')
 print()
 print(' There are 5 ships to find.')

@@ -22,8 +22,13 @@ Go to https://sams-battleship-game.herokuapp.com/ to try it out. It is a web sit
 - Bigger ships
 - Player option to choose number of ships and number of rounds
 
+# Bugs
+- Corrected a bug when input was empty with a input check.
+- Corrected a bug when input of letter was lowercase with .upper on input of letter.
+
 
 # Testing
+- Tested code through a P8P code checker with no errors
 - Tested to put in a letter instead of a number. Player will get information it was wrong and a new input option.
 - Tested to put in a number instead of a letter. Player will get information it was wrong and a new input option.
 - Tested to press enter without any input. Player will get information it was wrong and a new input option.
