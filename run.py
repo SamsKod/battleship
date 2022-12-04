@@ -73,7 +73,7 @@ def get_player_guess():
 
 
 create_ships(Hidden_Pattern)
-turns = 1
+turns = 10
 print(' Welcome to Battleship!')
 print()
 print(' There are 5 ships to find.')
